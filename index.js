@@ -11,3 +11,20 @@
  let middleName = undefined;
  let selectedColor = null;
  let ifLie = false;
+
+ var a = 15;
+ 
+ console.log(a);
+//arrow functions
+ const myfunction = () => {
+    for(let i=0; i<2; i++){
+        a = a + a;
+    }
+    console.log(a)
+ }
+
+ myfunction();
+
+ const add = i => 3 * i
+
+ add(3)
