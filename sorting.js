@@ -75,8 +75,6 @@
 //   }
 
 
-// console.log(merge(['a'], ['a', 's']))
-
 function merge(arrayOne, arrayTwo) {
     //check if input is array
     // check if len is more than 0 
@@ -85,8 +83,14 @@ function merge(arrayOne, arrayTwo) {
     if (!Array.isArray(arrayOne) || !(Array.isArray(arrayTwo))) {
         throw "Input is not an array";
       }
-      if (arrayOne.length === 0 || arrayTwo.length === 0) {
-        throw " Array  is empty";
+      if (arrayOne.length === 0) {
+        throw " Array one is empty";
+      }
+      if (arrayTwo.length === 0) {
+        throw " Array two is empty";
+      }
+      if (arrayOne ===0 && arrayTwo.length === 0) {
+        throw " Array is empty";
       }
     let c = 0;
     for (i = 0; i < arrayOne.length; i++) {
@@ -96,10 +100,10 @@ function merge(arrayOne, arrayTwo) {
     //     } else throw " Please enter a vaild input";
     if(typeof arrayOne[i]  === 'string'){
         if(arrayOne[i].length === 1){
-            if((arrayOne[i] >= 'a' && arrayOne[i] <= 'z') || (arrayOne[i] >= 'A' && arrayOne[i] <= 'Z'))continue;
+            if((arrayOne.charAt(i) >= 'a' && arrayOne[i] <= 'z') || (arrayOne[i] >= 'A' && arrayOne[i] <= 'Z')){continue};
         }else throw "Not a valid input"; 
     }else if(typeof arrayOne[i] === 'number'){
-        continue;
+        {continue;}
     }else{
         throw "Not a valid input";
     }
@@ -113,10 +117,10 @@ function merge(arrayOne, arrayTwo) {
     
         if(typeof arrayTwo[i]  === 'string'){
             if(arrayTwo[i].length === 1){
-                if((arrayTwo[i] >= 'a' && arrayTwo[i] <= 'z') || (arrayTwo[i] >= 'A' && arrayTwo[i] <= 'Z'))continue;
+                if((arrayTwo[i] >= 'a' && arrayTwo[i] <= 'z') || (arrayTwo[i] >= 'A' && arrayTwo[i] <= 'Z')){continue;}
             }else throw "Not a valid input"; 
         }else if(typeof arrayTwo[i] === 'number'){
-            continue;
+            {continue;}
         }else{
             throw "Not a valid input";
         }
@@ -180,4 +184,4 @@ function merge(arrayOne, arrayTwo) {
     return d5;
   }
   
-  console.log(merge([4,3,9,2],['ad', 'A,', 'Aditya']))
+  console.log(merge([]))
